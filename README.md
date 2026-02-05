@@ -30,7 +30,7 @@ Ensure you have a modern Python environment. It is recommended to use uv for 10x
 
 Bash
 # Clone the repository
-git clone https://github.com/yourusername/AI_Researcher_Agent.git
+git clone:  https://github.com/Kumail-sp/AI_Researcher_Agent.git
 cd AI_Researcher_Agent
 
 # Create and activate virtual environment
@@ -53,6 +53,7 @@ Place your target PDF in the data/ folder and name it knowledge.pdf. Then run th
 Bash
 python agent_researcher.py
 📂 Project Structure
+
 Plaintext
 ├── data/               # Local PDF storage (ignored by git)
 ├── chroma_db/          # Persistent vector database
