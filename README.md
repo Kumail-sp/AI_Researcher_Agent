@@ -54,7 +54,8 @@ Bash
 python agent_researcher.py
 📂 Project Structure
 
-Plaintext
+Plaintext:
+
 ├── data/               # Local PDF storage (ignored by git)
 ├── chroma_db/          # Persistent vector database
 ├── agent_researcher.py # Main agentic logic
@@ -65,3 +66,13 @@ Plaintext
 Privacy: The data/ and chroma_db/ folders are excluded via .gitignore to protect personal data.
 
 Environment Management: Uses .env to prevent API key leakage.
+
+What i did in this Project: 
+
+Data Ingestion: I handled unstructured data (PDFs) and turned them into searchable "Vectors".
+
+Orchestration: I used CrewAI to manage an agent that can "think" before it acts.
+
+Tool Integration: Agent uses both a Vector Database (ChromaDB) and a Real-time Web Search (Tavily).
+
+Production Standards: I used .env for security, .gitignore for privacy, and uv for modern dependency management.
