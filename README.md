@@ -4,6 +4,22 @@ A sophisticated **Multi-Agent Research System** built with **CrewAI** and **Stre
 
 [Image of AI Agent Workflow: PDF Data -> Vector Store -> Agent Reasoning -> Web Search -> Final PDF Report]
 
+## 🌐 Live Demo
+🔗 **[Deploying to Streamlit Cloud... Link coming soon!]**
+
+## 🌟 Enhanced Features
+* **Human-in-the-Loop (HITL):** A two-stage execution process that pauses for user feedback after initial CV extraction to ensure 100% data accuracy.
+* **Stateful Orchestration:** Utilizes `st.session_state` to maintain context across multi-step agentic tasks without losing data.
+* **Dynamic PDF Generation:** On-the-fly conversion of agent findings into a downloadable, professional PDF report using `fpdf2`.
+* **Agentic RAG:** Dynamically retrieves context from a local PDF vector store (ChromaDB) and live web data (Tavily AI).
+
+## 🚀 Interactive Workflow
+1. **Upload:** User provides a CV in PDF format.
+2. **Extraction:** Agent 1 parses the PDF and presents a "Skills Summary."
+3. **HITL Feedback:** The user reviews the summary and can add extra context (e.g., "Focus on FinTech in Canary Wharf").
+4. **Research & Compare:** Agent 2 combines the verified summary + user feedback with live 2026 market data.
+5. **Final Export:** A synthesized Career Gap Analysis is generated and available for immediate PDF download.
+
 ## 🚀 The Value Proposition
 Unlike static "Chat-with-PDF" apps, this system uses a **specialized Agent** that acts as a London-based Tech Headhunter. It performs a multi-step reasoning process:
 1. **Context Extraction:** Deep-scans the uploaded PDF using an underlying vector database.
