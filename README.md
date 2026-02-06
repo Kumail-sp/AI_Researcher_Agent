@@ -1,78 +1,57 @@
-🤖 AI Researcher Agent: Agentic RAG Pipeline
-A professional Agentic Retrieval-Augmented Generation (RAG) system built with CrewAI and LangChain. This agent doesn't just "chat"—it autonomously decides when to search a local knowledge base (PDF) and when to perform live web research to provide comprehensive career gap analyses.
+# 🤖 Agentic Career Researcher: End-to-End RAG Pipeline
 
-🌟 Key Features
-Autonomous Reasoning: Uses the ReAct (Reason + Act) pattern to decide between multiple tools.
+A sophisticated **Multi-Agent Research System** built with **CrewAI** and **Streamlit**. This application autonomously bridges the gap between a candidate's local data (CV/PDF) and live market trends by utilizing an **Agentic RAG** workflow.
 
-Agentic RAG: Dynamically retrieves context from a local PDF vector store (ChromaDB).
+[Image of AI Agent Workflow: PDF Data -> Vector Store -> Agent Reasoning -> Web Search -> Final PDF Report]
 
-Live Web Integration: Integrated with the Tavily Search API for real-time market data.
+## 🚀 The Value Proposition
+Unlike static "Chat-with-PDF" apps, this system uses a **specialized Agent** that acts as a London-based Tech Headhunter. It performs a multi-step reasoning process:
+1. **Context Extraction:** Deep-scans the uploaded PDF using an underlying vector database.
+2. **Real-time Research:** Queries the **Tavily Search API** for 2026 London AI market data.
+3. **Comparative Analysis:** Quantifies the "Skill Gap" between the user's profile and current hiring standards.
+4. **Structured Reporting:** Synthesizes findings into a professional recommendation.
 
-Automated Reporting: Generates professional PDF reports summarizing findings using Python's fpdf2.
+## 🛠 Tech Stack & Architecture
+* **Orchestration:** [CrewAI](https://www.crewai.com/) (Managing autonomous agentic workflows).
+* **Intelligence:** OpenAI **GPT-4o-mini** (Optimized for reasoning and cost-efficiency).
+* **Vector Store:** **ChromaDB** (Efficient local indexing of PDF content).
+* **Frontend:** **Streamlit** (Clean, Python-native web interface).
+* **Package Management:** `uv` (Next-gen, ultra-fast Python dependency management).
 
-🛠 Tech Stack
-Framework: CrewAI (Multi-agent orchestration)
+## 📂 Project Structure
+```text
+├── main.py             # Streamlit Entrypoint & Agent Orchestration
+├── agent_researcher.py # CLI version of the Agentic logic
+├── make_pdf.py         # Post-processing script for PDF generation
+├── data/               # Persistent storage for uploaded CVs
+├── .env                # API Keys (OpenAI & Tavily)
+└── requirements.txt    # Project dependencies
 
-LLM: OpenAI GPT-4o-mini
+⚙️ Installation & Setup
+1. Environment Setup
 
-Vector Database: ChromaDB
+Clone the repository and install dependencies using uv for 10x faster setup:
 
-Search Engine: Tavily AI
-
-Language: Python 3.12+ (managed with uv)
-
-🚀 Quick Start
-1. Prerequisites
-
-Ensure you have a modern Python environment. It is recommended to use uv for 10x faster dependency management.
-
-2. Installation
-
-Bash
-# Clone the repository
-git clone:  https://github.com/Kumail-sp/AI_Researcher_Agent.git
-cd AI_Researcher_Agent
-
-# Create and activate virtual environment
+git clone [https://github.com/yourusername/AI_Researcher_Agent.git]
+<!-- cd AI_Researcher_Agent
 uv venv
 source venv/bin/activate
+uv pip install -r requirements.txt -->
 
-# Install dependencies
-uv pip install -r requirements.txt
-3. Environment Setup
+2. Configuration
 
-Create a .env file in the root directory and add your API keys:
+Create a .env file in the root directory:
+OPENAI_API_KEY=your_key_here
+TAVILY_API_KEY=your_key_here
 
-Plaintext
-OPENAI_API_KEY=sk-xxxx
-TAVILY_API_KEY=tvly-xxxx
-4. Usage
+3. Execution
 
-Place your target PDF in the data/ folder and name it knowledge.pdf. Then run the researcher:
+Launch the web interface:
+streamlit run main.py
 
-Bash
-python agent_researcher.py
-📂 Project Structure
+🛡 Security & Privacy
+Local Processing: PDF data is indexed locally in a vector store and never used for training external models.
 
-Plaintext:
+Environment Safety: All API keys are managed via .env and excluded from version control via .gitignore.
 
-├── data/               # Local PDF storage (ignored by git)
-├── chroma_db/          # Persistent vector database
-├── agent_researcher.py # Main agentic logic
-├── make_pdf.py         # PDF report generation script
-├── .env                # Private API keys
-└── requirements.txt    # Project dependencies
-🛡 Security & Best Practices
-Privacy: The data/ and chroma_db/ folders are excluded via .gitignore to protect personal data.
-
-Environment Management: Uses .env to prevent API key leakage.
-
-What i did in this Project: 
-
-Data Ingestion: I handled unstructured data (PDFs) and turned them into searchable "Vectors".
-
-Orchestration: I used CrewAI to manage an agent that can "think" before it acts.
-
-Tool Integration: Agent uses both a Vector Database (ChromaDB) and a Real-time Web Search (Tavily).
-
-Production Standards: I used .env for security, .gitignore for privacy, and uv for modern dependency management.
+Developed by Kumail  AI Engineer & Career Strategist
