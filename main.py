@@ -36,12 +36,23 @@ st.set_page_config(page_title="AI Career Agent", layout="wide")
 st.title("🤖 Agentic Researcher (End-to-End)")
 
 # --- STAGE 1: UPLOAD ---
+import os  # Make sure this is imported at the top!
+
 with st.sidebar:
     st.header("1. Upload CV")
     uploaded_file = st.file_uploader("Choose a PDF", type="pdf")
     if uploaded_file and st.session_state.stage == "upload":
-        with open("data/knowledge.pdf", "wb") as f:
+        # --- NEW: Ensure the 'data' directory exists ---
+        if not os.path.exists("data"):
+            os.makedirs("data")
+        
+        # Save the file to your 'data' folder
+        # Save with the actual name instead of a hardcoded one
+        file_path = os.path.join("data", uploaded_file.name)
+        with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
+        st.session_state.current_file = file_path # Save path for the Agent
+        
         st.success("File Ready!")
         if st.button("Begin Profile Extraction"):
             st.session_state.stage = "review"
@@ -51,7 +62,8 @@ with st.sidebar:
 if st.session_state.stage == "review":
     st.header("🕵️ Step 1: Profile Extraction")
     with st.status("Agent is reading your CV...", expanded=True):
-        pdf_tool = PDFSearchTool(pdf="data/knowledge.pdf")
+        # Tell the Agent to look at the specific file the user just gave us
+        pdf_tool = PDFSearchTool(pdf=st.session_state.current_file)
         extractor = Agent(
             role='Data Extraction Specialist',
             goal='Accurately list every technical skill in the PDF.',
@@ -112,10 +124,10 @@ if st.session_state.stage == "final_report":
 
     st.download_button(
         label="📥 Download PDF Report",
-        data=pdf_data, # This is now valid 'bytes'
+        data=pdf_data,  # This is now valid 'bytes'
         file_name="Career_Analysis.pdf",
         mime="application/pdf"
-)
+    )
     
     if st.button("Start New Analysis"):
         st.session_state.stage = "upload"
