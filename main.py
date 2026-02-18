@@ -83,7 +83,7 @@ if "cv_text" not in st.session_state:
     st.session_state.cv_text = None
 
 st.set_page_config(page_title="AI Career Agent", layout="wide")
-st.title("🤖 Agentic Researcher (No PDFSearchTool - Raw Text)")
+st.title("Agentic Researcher")
 
 # --- STAGE 1: UPLOAD ---
 with st.sidebar:
