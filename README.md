@@ -370,13 +370,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🙏 Acknowledgments
 
@@ -391,21 +384,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Kumail Haider** - AI Engineer
 
-- LinkedIn: [Your LinkedIn URL]
-- Portfolio: [Your Portfolio URL]
-- Email: [Your Email]
+- LinkedIn: [www.linkedin.com/in/kumail-sp]
+- Portfolio: [https://github.com/Kumail-sp]
+- Email: [Kumailhaiderid@gmail.com]
 
 **Project Link**: [https://github.com/yourusername/ai-career-agent](https://github.com/yourusername/ai-career-agent)
 
----
-
-## 📊 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/ai-career-agent?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/ai-career-agent?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/yourusername/ai-career-agent?style=social)
-
----
 
 <div align="center">
 Made with ❤️ by Kumail Haider
